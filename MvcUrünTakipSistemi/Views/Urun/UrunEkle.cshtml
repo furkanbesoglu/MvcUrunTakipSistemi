@@ -1,0 +1,36 @@
+﻿@model MvcUrünTakipSistemi.Models.Entity.Urunler
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+    <div style="margin-top:15px;">
+        <label>Ürün Adı</label>
+        @Html.TextBoxFor(u => u.UrunAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Marka</label>
+        @Html.TextBoxFor(u => u.Marka, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Stok</label>
+        @Html.TextBoxFor(u => u.Stok, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Alış Fiyatı</label>
+        @Html.TextBoxFor(u => u.AlisFiyat, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Satış Fiyatı</label>
+        @Html.TextBoxFor(u => u.SatisFiyat, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Kategori Adı</label>
+        @Html.DropDownListFor(u => u.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+       <button class="btn btn-danger">Ürün Ekle</button>
+    </div>
+</form>

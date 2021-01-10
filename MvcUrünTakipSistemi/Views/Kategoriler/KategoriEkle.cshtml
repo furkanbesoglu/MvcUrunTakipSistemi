@@ -1,0 +1,16 @@
+﻿@model MvcUrünTakipSistemi.Models.Entity.Kategoriler
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Kategori Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    <div>
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(ktg => ktg.KategoriAD, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-warning">Kategori Ekle</button>
+</form>

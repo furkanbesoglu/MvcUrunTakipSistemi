@@ -1,0 +1,31 @@
+﻿@using MvcUrünTakipSistemi.Models.Entity;
+@model List<Satislar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Satış ID</th>
+        <th>Ürün Adı</th>
+        <th>Personel</th>
+        <th>Müşteri</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var sts in Model)
+    {
+        <tr>
+            <th>@sts.SatisID</th>
+            <td>@sts.Urunler.UrunAD</td>
+            <td>@sts.Personel.PersonelAD @sts.Personel.PersonelSoyad</td>
+            <td>@sts.Musteriler.MusteriAD @sts.Musteriler.MusteriSoyad</td>
+            <td>@sts.Fiyat</td>
+            <td>@Convert.ToDateTime(sts.Tarih).ToString("dd.MM.yyyy")</td>
+        </tr>
+    }
+</table>
+<a href="/Satis/YeniSatis/" class="btn btn-primary">Yeni Satış EKle</a>
+
+

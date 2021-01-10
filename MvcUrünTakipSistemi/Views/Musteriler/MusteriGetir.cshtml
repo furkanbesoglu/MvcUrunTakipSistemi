@@ -1,0 +1,33 @@
+﻿@model MvcUrünTakipSistemi.Models.Entity.Musteriler
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("Guncelle", "Musteriler", FormMethod.Post))
+{
+    <div style="margin-top:15px;">
+        <label>Müşteri Adı</label>
+        @Html.TextBoxFor(m => m.MusteriAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Müşteri Soyadı</label>
+        @Html.TextBoxFor(m => m.MusteriSoyad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Müşteri Şehir</label>
+        @Html.TextBoxFor(m => m.Sehir, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Müşteri Bakiye</label>
+        @Html.TextBoxFor(m => m.Bakiye, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m=>m.MusteriID)
+
+    <div style="margin-top:15px;">
+        <button class="btn btn-warning">Müşteri Güncelle</button>
+    </div>
+   
+}
+
